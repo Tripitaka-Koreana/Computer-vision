@@ -13,15 +13,15 @@ sobel_y=cv.convertScaleAbs(grad_y)
 
 # (30, 40) 위치의 dx, dy
 x, y = 40, 30
-dx = sobel_x[y, x]
-dy = sobel_y[y, x]
+dx = grad_x[y, x]
+dy = grad_y[y, x]
 
 # dx와 dy를 배열로 변환
 dx_array = np.array([[dx]], dtype=np.float32)
 dy_array = np.array([[dy]], dtype=np.float32)
 
 # 에지 강도,  그레디언트 방향
-magnitude, angle = cv.cartToPolar(dx_array, dy_array, angleInDegrees=True)
+magnitude, angle = cv.cartToPolar(np.array([[dx]]), np.array([[dy]]), angleInDegrees=True)
 angle_radians = np.radians(angle)
 
 # 에지 강도 맵

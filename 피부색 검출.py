@@ -13,6 +13,7 @@ cv.imshow("mask1", mask1)
 mask2 = cv.inRange(hsv, (160,25, 0),(180,166,255))
 cv.imshow("mask2", mask2)
 mask = mask1 | mask2
+detected = cv.copyTo(img, mask)
 cv.imshow("Mask", mask) ; cv.waitKey()
 #%%
 detected = cv.copyTo(img, mask)
