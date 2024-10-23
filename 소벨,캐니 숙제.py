@@ -1,7 +1,6 @@
 import cv2 as cv
 import numpy as np
-
-img=cv.imread('food.jpg')
+img=cv.imread('binaryGroup.bmp')
 gray=cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
 # 소벨 필터 작용
@@ -12,7 +11,7 @@ sobel_x=cv.convertScaleAbs(grad_x)
 sobel_y=cv.convertScaleAbs(grad_y)
 
 # (30, 40) 위치의 dx, dy
-x, y = 40, 30
+x, y = 180, 130
 dx = grad_x[y, x]
 dy = grad_y[y, x]
 

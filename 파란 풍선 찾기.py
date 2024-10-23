@@ -16,7 +16,7 @@ cv.waitKey()  # 키 입력 대기
 hsv = cv.cvtColor(img, cv.COLOR_BGR2HSV)  # BGR 색상 공간을 HSV 색상 공간으로 변환
 
 # 색상 범위에 따른 마스크 생성
-mask = cv.inRange(hsv, (91, 0, 80), (125, 255, 255))  # 지정된 색상 범위에 해당하는 부분을 흰색으로, 나머지는 검은색으로 설정
+mask = cv.inRange(hsv, (10, 0, 80), (30, 255, 255))  # 지정된 색상 범위에 해당하는 부분을 흰색으로, 나머지는 검은색으로 설정
 cv.imshow("Mask", mask)  # 생성된 마스크 이미지 보여주기
 cv.waitKey()  # 키 입력 대기
 
