@@ -11,9 +11,9 @@ cv.waitKey()  # 키 입력을 기다립니다.
 #%% 
 # 이미지를 그레이스케일로 변환합니다.
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-
+print(img.shape)
 # 허프 변환을 사용하여 원을 찾습니다.
-apples = cv.HoughCircles(gray, cv.HOUGH_GRADIENT, 1, 200, param1=150, param2=20, minRadius=50, maxRadius=120)
+apples = cv.HoughCircles(gray, cv.HOUGH_GRADIENT, 2, 200, param1=150, param2=20, minRadius=50, maxRadius=120)
 
 # 찾은 원의 정보 출력
 print(apples.shape)  # 찾은 원의 개수 및 정보의 형태를 출력합니다.

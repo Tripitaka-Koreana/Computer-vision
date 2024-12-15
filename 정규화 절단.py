@@ -26,6 +26,9 @@ print(np.max(ncut))  # Normalized Cut 레이블의 최대값 출력
 print(ncut)  # Normalized Cut 레이블 배열 출력
 print(ncut.shape)  # Normalized Cut 배열의 형태 출력
 
+#영역의 개수 출력
+print(np.unique(ncut))
+
 # Normalized Cut 경계를 이미지에 마킹
 marking = skimage.segmentation.mark_boundaries(img, ncut)
 # 마킹된 이미지를 uint8 형식으로 변환

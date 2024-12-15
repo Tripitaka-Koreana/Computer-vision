@@ -52,7 +52,7 @@ cv.waitKey()  # 키 입력 대기
 cv.destroyAllWindows()  # 모든 윈도우 닫기
 
 # 엠보싱 처리: 255를 넘어가는 값을 클리핑하여 원래 범위로 조정
-emboss = np.uint8(np.clip(cv.filter2D(gray16, -1, femboss) + 128, 0, 255))
+emboss = np.uint8(np.clip(cv.filter2D(gray16, -1, femboss) + 128, 0, 255)) #-1인자: 입력영상과 동일한 dtype
 emboss_bad = np.uint8(cv.filter2D(gray16, -1, femboss) + 128)
 emboss_worse = cv.filter2D(gray, -1, femboss)  # 엠보싱 적용
 

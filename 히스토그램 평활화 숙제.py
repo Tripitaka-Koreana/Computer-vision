@@ -22,6 +22,7 @@ channel_y_his = cv.calcHist([channel_y], [0], None, [256], [0, 256])  # Y 성분
 
 channel_y_eq = cv.equalizeHist(channel_y)  # Y 성분에 히스토그램 균등화 적용
 channel_y_eq_his = cv.calcHist([channel_y_eq], [0], None, [256], [0, 256])  # 균등화 후 Y 성분의 히스토그램 계산
+print(channel_y_eq_his[250]) #균등화된 히스토그램에서 250값을 가진 화소의 개수 출력
 
 ycbcr_img[:, :, 0] = channel_y_eq  # 균등화된 Y 성분을 YCbCr 이미지에 다시 넣기
 
@@ -75,3 +76,4 @@ plt.axis('off')  # 축 표시 끄기
 combined_image = np.hstack((img_rgb, cv.cvtColor(equalized_image_rcbcr, cv.COLOR_BGR2RGB), equalized_image_rgb))
 cv.imshow('Equalized', cv.cvtColor(combined_image, cv.COLOR_RGB2BGR))  # 결합된 이미지를 BGR로 변환 후 표시
 cv.waitKey()  # 키 입력 대기
+cv.destroyAllWindows()

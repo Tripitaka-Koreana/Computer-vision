@@ -24,7 +24,10 @@ gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 edges = cv.Canny(gray, 125, 350)
 
 # Hough 변환을 사용하여 선을 검출합니다
+# 각 선의 끝 점이 주어지지 않기 때문에 선을 검출하지만 선분은 검출하지 않음에 유의
 lines = cv.HoughLines(edges, 1, math.pi / 180, 90)
+
+
 
 # 검출된 선을 hl_img에 그립니다
 for i in range(len(lines)):
@@ -39,6 +42,7 @@ for i in range(len(lines)):
         cv.line(hl_img, (x1, y1), (x2, y2), (0, 0, 255), 2)  # 선을 그립니다
 
 #%% HoughLinesP를 사용하여 선을 검출합니다
+#선분 검출을 허용(끝점이 있는 직선 검출)
 
 # 이미지를 다시 그레이스케일로 변환합니다
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)

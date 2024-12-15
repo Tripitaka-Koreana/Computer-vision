@@ -37,3 +37,16 @@ cv.waitKey()  # 키 입력 대기
 # Value 채널 표시
 cv.imshow('Value', v)
 cv.waitKey()  # 키 입력 대기
+cv.destroyAllWindows()
+
+#채널 별 작업 후 병합
+#명도 채널 값을 255로 변환 후 병합
+print(v.ndim)
+print(v.shape)
+print(v)
+v=np.zeros((948, 1434), np.uint8)+255
+dst=cv.merge([h,s,v])
+new=cv.cvtColor(dst,cv.COLOR_HSV2BGR)
+cv.imshow('New', new)
+cv.waitKey()
+cv.destroyAllWindows()

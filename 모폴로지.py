@@ -74,3 +74,8 @@ plt.show()  # 그래프 표시
 b_closing = cv.erode(cv.dilate(b, se, iterations=1), se, iterations=1)  # 팽창 후 침식을 적용하여 닫힘 수행
 plt.imshow(b_closing, cmap='gray'), plt.xticks([]); plt.yticks([])  # 닫힘 결과 이미지 표시
 plt.show()  # 그래프 표시
+
+# 열림 (Opening)
+b_opening = cv.dilate(cv.erode(b, se, iterations=1), se, iterations=1)  # 팽창 후 침식을 적용하여 닫힘 수행
+plt.imshow(b_opening, cmap='gray'), plt.xticks([]); plt.yticks([])  # 닫힘 결과 이미지 표시
+plt.show()  # 그래프 표시

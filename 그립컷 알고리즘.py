@@ -9,6 +9,12 @@ img_show = np.copy(img)  # 이미지의 깊은 복사 생성
 # 마스크 초기화: 모든 픽셀을 배경으로 설정
 mask = np.zeros((img.shape[0], img.shape[1]), np.uint8)
 mask[:, :] = cv.GC_PR_BGD  # 초기 마스크는 잠재적 배경으로 설정
+"""
+GC_BGD=(0)
+GC_FGD=(1)
+GC_PR_BGD=(2)
+GC_PR_FGD=(3)
+"""
 
 BrushSiz = 9  # 브러시 크기 설정
 LColor, RColor = (255, 0, 0), (0, 0, 255)  # 왼쪽 클릭과 오른쪽 클릭 색상 설정
