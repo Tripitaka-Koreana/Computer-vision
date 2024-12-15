@@ -17,13 +17,14 @@ apples = cv.HoughCircles(gray, cv.HOUGH_GRADIENT, 2, 200, param1=150, param2=20,
 
 # 찾은 원의 정보 출력
 print(apples.shape)  # 찾은 원의 개수 및 정보의 형태를 출력합니다.
-print(apples)  # 찾은 원의 좌표 및 반지름 정보를 출력합니다.
+print(apples[0][0])  # 찾은 원의 좌표 및 반지름 정보를 출력합니다.
 
 #%% 
 # 찾은 원을 원본 이미지에 그립니다.
 for i in apples[0]:
     cv.circle(img, (int(i[0]), int(i[1])), int(i[2]), (255, 0, 0), 2)  # 원의 중심과 반지름을 사용해 원을 그림
 
+        
 cv.imshow('Apple detection', img)  # 원이 그려진 이미지를 화면에 표시합니다.
 
 cv.waitKey()  # 키 입력을 기다립니다.
