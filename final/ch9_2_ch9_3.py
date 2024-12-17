@@ -85,6 +85,9 @@ while True:
     if key==ord('q'): break
 #%%check elapsed time
 '''
+
+
+
 end=time.time()
 print("Number of frames= ", n_frame, " Elaped time= ", end-start, "fps= ", n_frame/(end-start))
 '''

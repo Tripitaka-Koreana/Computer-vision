@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Nov 20 10:57:57 2023
-
-@author: BigData
-"""
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Flatten, Dropout, Dense, Rescaling
